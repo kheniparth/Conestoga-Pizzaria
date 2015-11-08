@@ -48,7 +48,11 @@ class OrdersController  extends AppController
         }
     }
     
-   
+     public function view($id)
+    {
+        $order = $this->Orders->get($id);
+        $this->set(compact('order'));
+    }
 
     public function index()
     {
