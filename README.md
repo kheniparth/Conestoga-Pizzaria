@@ -1,26 +1,18 @@
-# CakePHP Application Skeleton
+# How To Order
 
-[![Build Status](https://api.travis-ci.org/cakephp/app.png)](https://travis-ci.org/cakephp/app)
-[![License](https://poser.pugx.org/cakephp/app/license.svg)](https://packagist.org/packages/cakephp/app)
+For Normal User just fill out the form on the home page and your order will be saved in the database. Enjoy your PIZZA :) 
+You have to select atleast one topping or else your order will not be saved in our database.
 
-A skeleton for creating applications with [CakePHP](http://cakephp.org) 3.x.
+# For Admin
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+For admin user one link is given below "Order Now" button to login into Admin Page. To Login user has to enter username and password given below.
 
-## Installation
+Username : admin
+passowrd : conestoga
 
-1. Download [Composer](http://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
+After login you can view all the orders in a table form. You can delete the order from there itself. You can mark pending order as complete by clicking once on "Complete" link.
 
-If Composer is installed globally, run
-```bash
-composer create-project --prefer-dist cakephp/app [app_name]
-```
+If you choose to view the order in more detail then you will be navigated to "VIEW" page where you will get detail infromation about customer and his requirements for pizza.
 
-You should now be able to visit the path to where you installed the app and see
-the setup traffic lights.
+You can logout from both pages (View and Admin).
 
-## Configuration
-
-Read and edit `config/app.php` and setup the 'Datasources' and any other
-configuration relevant for your application.
