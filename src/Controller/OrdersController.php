@@ -8,6 +8,19 @@ class OrdersController  extends AppController
 {
     
   
+    public function login()
+    {
+        if ($this->request->is('post')) {
+            $login = $this->request->data;
+//            print_r($login);
+            if($login['username'] == 'admin' && $login['password'] == 'conestoga'){
+                    $this->Flash->success(__('Successfully Logged In.'));
+                    return $this->redirect(['action' => 'admin']);
+                }
+            
+            $this->Flash->error(__('Please Enter Right Credentials.'));
+        }
+    }
     
    
 
