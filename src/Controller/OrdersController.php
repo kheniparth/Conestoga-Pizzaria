@@ -6,8 +6,34 @@ namespace App\Controller;
 
 class OrdersController  extends AppController
 {
+    public function admin()
+    {
+        $orders = $this->Orders->find('all');
+        $this->set(compact('orders'));
+    }
     
-  
+    public function delete($id)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+
+        $order = $this->Orders->get($id);
+        if ($this->Orders->delete($order)) {
+            $this->Flash->success(__('The Order with id: {0} has been deleted.', h($id)));
+            return $this->redirect(['action' => 'admin']);
+        }
+    }
+    
+    public function complete($id)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+
+        $order = $this->Orders->get($id);
+        $order['status'] = "Completed";
+        if ($this->Orders->save($order)) {
+            $this->Flash->success(__('The Order with id: {0} has been marked as complete.', h($id)));
+            return $this->redirect(['action' => 'admin']);
+        }
+    }
     public function login()
     {
         if ($this->request->is('post')) {
